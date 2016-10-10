@@ -4,3 +4,10 @@
 .griniš {
     color: mediumseagreen;
 }
+.malo-sivo {
+    color:  gray;
+    font-size: 0.7em;
+}
+.thumbnail {
+    border-radius: 100%;
+}
