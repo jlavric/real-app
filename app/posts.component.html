@@ -8,11 +8,15 @@
              </option>
          </select>
         <spinner [visible]="postsLoading"></spinner>
+        
+        <pagination [items]="posts" [page-size]="pageSizeFromSettings" (page-changed)="onPageChanged($event)"></pagination>
+        
         <ul class="list-group posts">
-            <li *ngFor="#post of posts" class="list-group-item" [class.active]="selectedPost==post" (click)="select(post)">
+            <li *ngFor="#post of pagedPosts" class="list-group-item" [class.active]="selectedPost==post" (click)="select(post)">
                 <i class="malo-sivo">userId:{{post.userId}}</i> {{post.title | capitalize}}
             </li>
         </ul>
+    
     </div>
     <div class="col-md-6">
        
