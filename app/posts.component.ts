@@ -65,7 +65,8 @@ export class PostsComponent implements OnInit {
             .subscribe(
             posts => {
                 this.posts = posts,
-                    this.pagedPosts = this.getPostsInPage(1)
+                    //this.pagedPosts = this.getPostsInPage(1)
+                    this.pagedPosts = _.first(this.posts, this.pageSizeFromSettings);
             },
             null,
             () => {
@@ -75,9 +76,12 @@ export class PostsComponent implements OnInit {
     }
 
     onPageChanged(page) {
-        this.pagedPosts = this.getPostsInPage(page);
+        //this.pagedPosts = this.getPostsInPage(page);
+        var start = (page - 1) * this.pageSizeFromSettings;
+        this.pagedPosts = _.take(_.rest(this.posts, start),this.pageSizeFromSettings);
     }
 
+ /* old school  
     private getPostsInPage(page) {
         var result = [];
         var start = (page - 1) * this.pageSizeFromSettings;
@@ -87,7 +91,9 @@ export class PostsComponent implements OnInit {
             result.push(this.posts[i]);
 
         return result;
-    }
+    }*/
+
+
 
     reloadPosts(filter) {
         this.selectedPost = null;
