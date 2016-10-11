@@ -1,10 +1,10 @@
 import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
-import {BitstampTicker} from './bitstamp-ticker.component';
+import {BitstampTicker} from '../bitstamp/bitstamp-ticker.component';
 
 @Component({
     selector: 'navbar',
-    templateUrl: 'app/navbar.component.html',
+    templateUrl: 'app/shared/navbar.component.html',
     directives: [ROUTER_DIRECTIVES,BitstampTicker]
 })
 export class NavBarComponent {

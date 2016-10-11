@@ -4,7 +4,7 @@ import {RouterLink} from 'angular2/router';
 import {BitstampService} from './bitstamp.service';
 
 @Component({
-    templateUrl: 'app/bitstamp-transactions.component.html',
+    templateUrl: 'app/bitstamp/bitstamp-transactions.component.html',
     providers: [BitstampService],
     directives: [RouterLink]
 })

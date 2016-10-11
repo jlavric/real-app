@@ -1,13 +1,13 @@
 import {Component, OnInit} from 'angular2/core';
 
 import {PostService} from './post.service';
-import {UserService} from './user.service';
-import {SpinnerComponent} from './spinner.component';
-import {CapitalizePipe} from "./capitalizePipe";
-import {PaginationComponent} from "./pagination.component";
+import {UserService} from '../users/user.service';
+import {SpinnerComponent} from '../shared/spinner.component';
+import {CapitalizePipe} from "../shared/capitalizePipe";
+import {PaginationComponent} from "../shared/pagination.component";
 
 @Component({
-    templateUrl: 'app/posts.component.html',
+    templateUrl: 'app/posts/posts.component.html',
     styles: [`
          .posts li { cursor: default; }
          .posts li:hover { background: #cddc39; } 
