@@ -3,6 +3,7 @@
 } 
 .griniš {
     color: mediumseagreen;
+    word-wrap: break-word;
 }
 .malo-sivo {
     color:  gray;

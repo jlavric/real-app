@@ -1,12 +1,7 @@
 <h1>Posts</h1>
-<div class="row">
+
+<div class="row container-fluid">
     <div class="col-md-6">
-        <!--select #u class="form-control" (change)="reloadPosts({ userId: u.value })">
-             <option value="">Select a user...</option>
-             <option *ngFor="#user of users" value="{{user.id}}">
-                 {{user.name}}
-             </option>
-         </select-->
         <!--spinner [visible]="postsLoading"></spinner-->
         
         <!--pagination [items]="posts" [page-size]="pageSizeFromSettings" (page-changed)="onPageChanged($event)"></pagination-->
@@ -17,17 +12,15 @@
 				<th>Title</th>
 				<th>Published</th>
 				<th>Updated</th>
-				<th>Labels</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="#post of posts">
-				<td >{{post.title}}</td>
-				<td>{{post.published | toDate | date:'shortDate'}}</td>
-				<td>{{post.updated | toDate | date:'dd MMM y'}}</td>
-				<td>
-					<i class="griniš" (click)="getPost(post)">{{post.labels }}</i>
-				</td>
+				<td class="text-nowrap clickable" (click)="getPost(post)">{{post.title}}
+                    <footer class="malo-sivo">{{post.labels}}</footer>
+                </td>
+				<td class="text-nowrap">{{post.published | toDate | date:'shortDate'}}</td>
+				<td class="text-nowrap">{{post.updated | toDate | date:'dd MMM y'}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -35,27 +28,14 @@
     </div>
     <div class="col-md-6">
        
-        <!--div *ngIf="selectedPost" class="panel panel-default"-->
-            <div class="panel-heading">
-                <h3 class="panel-title">{{selectedPost}}</h3>
+        <div *ngIf="selectedPost && selectedPost.title" class="panel panel-default">
+            <div class="panel-heading panel-primary">
+                <h3 class="panel-title">{{selectedPost.title}}</h3>
             </div>
-            <div class="panel-body">
-                {{selectedPost.content}}
+            <div class="panel-body" [innerHTML]="selectedPost.content">                
                 <hr/>
-                 <!--spinner [visible]="commentsLoading"></spinner-->
-                <!--div class="media" *ngFor="#comment of selectedPost.comments">
-                    <div class="media-left">
-                        <a href="#">
-                            <img class="media-object thumbnail" src="http://lorempixel.com/80/80/people?random={{comment.id}}" alt="...">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">{{comment.name}}</h4>
-                        {{comment.body}}
-                    </div>
-                </div-->
             </div>
-        <!--/div-->
+        </div>
     </div>
 
 </div>

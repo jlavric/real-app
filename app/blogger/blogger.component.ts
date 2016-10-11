@@ -13,7 +13,7 @@ import {BloggerService} from './blogger.service';
 export class BloggerComponent implements OnInit {
 
     posts= [];
-    selectedPost;
+    selectedPost = [];
     
     constructor(private _service: BloggerService) {
 
