@@ -5,3 +5,4 @@ typings
 *.js
 font-awesome
 .vscode
+/npm-debug.log
