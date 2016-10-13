@@ -1,0 +1,19 @@
+<h1>Imenik</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Osebna številka</th>
+            <th>Naziv DM</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="#i of imenik">
+            <td>{{i.naziv}}</td>
+            <td>{{i.osebna_st}}</td>
+            <td>{{i.naziv_dm}}</td>            
+            <td>{{i.id_fos}}</td>
+        </tr>
+    </tbody>
+</table>

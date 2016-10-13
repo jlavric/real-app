@@ -4,6 +4,8 @@ import {RouteConfig,ROUTER_DIRECTIVES} from 'angular2/router'
 import {NavBarComponent} from './shared/navbar.component';
 import {HomeComponent} from './home.component';
 import {UsersComponent} from './users/users.component';
+import {OsebeComponent} from './osebe/osebe.component';
+import {ImenikComponent} from './osebe/imenik.component';
 import {BitstampTransactionsComponent} from './bitstamp/bitstamp-transactions.component';
 import {UserFormComponent} from './users/user-form.component';
 import {PostsComponent} from './posts/posts.component';
@@ -15,6 +17,8 @@ import {BloggerComponent} from './blogger/blogger.component';
     {path: '/users', name: 'Users', component: UsersComponent},
     {path: '/users/:id', name: 'EditUser', component: UserFormComponent},
     {path: '/users/new', name: 'NewUser', component: UserFormComponent},
+    {path: '/osebe', name: 'Osebe', component: OsebeComponent},
+    {path: '/imenik', name: 'Imenik', component: ImenikComponent},
     {path: '/posts', name: 'Posts', component: PostsComponent},
     {path: '/blogger-posts', name: 'BloggerPosts', component: BloggerComponent},
     {path: '/transactions', name: 'Transactions', component: BitstampTransactionsComponent},

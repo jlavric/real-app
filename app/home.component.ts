@@ -10,5 +10,5 @@ import {Component,OnInit} from 'angular2/core';
 
 })
 export class HomeComponent  {
-    
+    title = "default title"
 }

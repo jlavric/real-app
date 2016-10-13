@@ -1,0 +1,19 @@
+<h1>Osebe</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ime</th>
+            <th>Priimek</th>
+            <th>Oznaka</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="#oseba of osebe">
+            <td>{{oseba.ime_fos}}</td>
+            <td>{{oseba.priimek_fos}}</td>
+            <td>{{oseba.oznaka_fos}}</td>            
+            <td>{{oseba.id_fos}}</td>
+        </tr>
+    </tbody>
+</table>
